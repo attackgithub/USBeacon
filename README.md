@@ -94,19 +94,20 @@ Scripts:
 > - gen_inject.sh - Convert RD script to inject.bin 
 
 ## Operations
-In a gist:
+**In a gist:**
+1. install backend. Change XOR key or code per Frontend. Start it.
+2. provision frontend. Change XOR key or dynamically generate.
+3. deploy frontend. wait.
+4. run reports on backend.
 
-```sequence
-Note right of FE: Cleartext payload via REST
-FE-->BE(80): GET Parameters
-FE-->BE(80): POST Parameters
-FE-->BE(80): PUT JSON
-Note left of DB: SQL/ORM
-
-Note right of FE: Encrypted payload (B64Encode(XOR(payload,key)) via REST
-FE-->BE(80): GET Parameters 
-FE-->BE(80): POST Parameters
-FE-->BE(80): PUT JSON
+FE- Frontend
+BE-Backend
+DB-Database
+```
+FE-->REST --> BE(80): GET Parameters --> DB
+FE-->REST --> BE(80): POST Parameters --> DB
+FE-->REST --> BE(80): PUT JSON --> DB 
+Encrypted payload (B64Encode(XOR(payload,key)) 
 ```
 
 **Shortcomings:**
