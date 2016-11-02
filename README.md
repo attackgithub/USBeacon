@@ -94,8 +94,23 @@ Scripts:
 > - gen_inject.sh - Convert RD script to inject.bin 
 
 ## Operations
-TBD
+In a gist:
+
+```sequence
+Note right of FE: Cleartext payload via REST
+FE-->BE(80): GET Parameters
+FE-->BE(80): POST Parameters
+FE-->BE(80): PUT JSON
+Note left of DB: SQL/ORM
+
+Note right of FE: Encrypted payload (B64Encode(XOR(payload,key)) via REST
+FE-->BE(80): GET Parameters 
+FE-->BE(80): POST Parameters
+FE-->BE(80): PUT JSON
+```
+
 **Shortcomings:**
 
 > - Static XOR key between frontend and backend, but can be randomized with keyspace of UTF-16  
 Opted out of full symmetric encryption due to poor support in VBScript.
+
