@@ -13,6 +13,7 @@ USBeacon
 * Enable transparent, obscured payload communication over common non-secured port (80). Application level encryption. This is done so that SSL interception and inspection is not an issue.  Works by blending into normal traffic. All it should look like a straight HTTP traffic.
 * Allows storage of gathered data.
 * Any HTTP client can communicate.
+* Relative ease of deployment.  Flask microframework. 
 
 ##Backend 
 
