@@ -84,3 +84,17 @@ Create others as needed.
 ## Provisioning 
 
 Contains sample scripts to manage creation of a working USB RubberDucky drop.  
+
+> ./dist - _your payloads that go on RD USB _ 
+Scripts:
+> - get_ext_deps.sh  - _Get USB RD dependency scripts_
+> - gen_vidpid.sh - _VIP PID swapper
+> - payload2usb.sh - _Flash RD firmware and copy payload to RD_
+> - gen_inject.sh - Convert RD script to inject.bin 
+
+## Operations
+TBD
+**Shortcomings:**
+
+> - Static XOR key between frontend and backend, but can be randomized with keyspace of UTF-16  
+Opted out of full symmetric encryption due to poor support in VBScript.
