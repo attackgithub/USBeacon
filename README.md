@@ -24,27 +24,16 @@ USBeacon
 > - Decodes/decrypts payloads
 > - Saves timestamped payloads to database 
 
-Sample Plaintext (GET): 
-`http://example.com:8000/beacon?a=ok,hid=data`
 
 Sample Plaintext (POST):
-POST `http://example.com:8000/beacon/4445534B544F502D4A4D4A4D4E4C49 HTTP/1.1
-Content-Type: application/x-www-form-urlencoded
-Host: healthybitsatwork.com:8000
-Content-Length: 226
-Expect: 100-continue
-Connection: Keep-Alive`
+
+`POST http://example.com:8000/beacon/4445534B544F502D4A4D4A4D4E4C49`
 
 `a=hid&d=state_ok_data_follows`
 
 Sample Encrypted Request:
 
-POST `http://example.com:8000/ebeacon/4445534B544F502D4A4D4A4D4E4C49 HTTP/1.1
-Content-Type: application/x-www-form-urlencoded
-Host: healthybitsatwork.com:8000
-Content-Length: 226
-Expect: 100-continue
-Connection: Keep-Alive`
+`POST http://example.com:8000/ebeacon/4445534B544F502D4A4D4A4D4E4C49 `
 
 `a=hid&d=NTgsNTksNDUsNTMsNDIsNDksNDYsODMsNTIsNTEsNTIsNTEsNDgsNTAsNTUsMzQsMjYsMjMsMTksMzEsMTMsMzIsNTgsNTksNDUsNTMsNDIsNDksNDYsODMsNTIsNTEsNTIsNTEsNDgsNTAsNTUsMzIsNzksNzEsNzYsODAsNzksNzIsNzAsODAsNzksNzEsNzEsODAsNzksNzYsNzEsMzI`
 
@@ -86,7 +75,11 @@ _Frontend_ contains example of such C# projects which collects needed info and c
 
 >./frontend/Windows/exebeacon/
 
-is one such example. Create others as needed.
+is one such example. 
+For the specific need I have chosen to further protect the  code with https://yck1509.github.io/ConfuserEx/ 
+
+
+Create others as needed.
 
 ## Provisioning 
 
